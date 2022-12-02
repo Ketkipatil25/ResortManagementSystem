@@ -71,7 +71,7 @@ class Admin {
         }
         if (N != null) {
             Inorder(N.left);
-            System.out.println("______________________________________________________________________________");
+            System.out.println("____________________________________________________________________________________");
             System.out.println(N.room_no + "\t\t\t" + N.price + "\t\t\t" + N.room_type + "\t\t\t" + N.beds);
             Inorder(N.right);
         }
@@ -80,6 +80,30 @@ class Admin {
 }
 
 class Customers {
+    public void RoomBook(){
+
+    }
+    public void Weddings(){
+        System.out.println("Info regarding Wedding");
+        System.out.println("Halls Available --> 5");
+        System.out.println("Date ");
+
+
+    }
+    public void Anniversaries(){
+
+    }
+    public void Birthdays(){
+
+    }
+    public void Engagements(){
+
+    }
+    public void conference(){
+
+    }
+
+
 
 }
 
@@ -95,14 +119,14 @@ public class Main {
             System.out.println("1.Admin\n2.Customer");
             System.out.println("Enter your choice:");
             int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter admin password to enter: ");
+                    String password = sc.next();
+                    if (password.equals("abc1234")) {
+                        System.out.println("*********You have entered the admin page***********");
 
-            while (p == 1) {
-                switch (choice) {
-                    case 1:
-                        System.out.println("Enter admin password to enter: ");
-                        String password = sc.next();
-                        if (password.equals("abc1234")) {
-                            System.out.println("*********You have entered the admin page***********");
+                        while (p == 1) {
                             System.out.println("1.Create rooms\n2.display");
                             System.out.println("Enter your choice:");
                             int choice1 = sc.nextInt();
@@ -113,19 +137,75 @@ public class Main {
 
                                 case 2:
                                     System.out.println(
-                                            "********************************Rooms Information********************************");
+                                            "************************************Rooms Information************************************");
                                     System.out.println("Room no.\t\tRoom Price\t\tRomm type\t\tNo. of beds");
                                     a.Inorder(a.root);
                                     break;
 
                             }
-                        } else {
-                            System.out.println("Invalid admin password");
+                            System.out.println("Do you want to continue?\n1.Yes\n2.No");
+                            p = sc.nextInt();
                         }
-                }
-                System.out.println("Do you want to continue?\n1.Yes\n2.No");
-                p = sc.nextInt();
+                    } else {
+                        System.out.println("Invalid admin password");
+                        break;
+                    }
+
+                case 2:
+                    System.out.println(
+                            "__________________________________________________________________________________________________________________");
+                    System.out.println(
+                            "|                        !!! Welcome to heavenly stay amidst the spectacular beauty !!!                           |");
+                    System.out.println(
+                            "|*****************************Experience world-class service at Greenland Resort**********************************| ");
+                    System.out.println(
+                            "|             Each room has a private bathroom equipped with a shower and a hairdryer,                            | ");
+                    System.out.println(
+                            "|             while selected rooms are fitted with a kitchenette fitted with a minibar.                           |");
+                    System.out.println(
+                            "|                      At the resort all rooms include bed linen and towels.                                      |");
+                    System.out.println(
+                            "|                                                                                                                 |");
+                    System.out.println(
+                            "|                      Our luxurious resort is perfect for all functions like                                     |");
+                    System.out.println(
+                            "|                    1.Wedding                 2.Anniversaries                                                    | ");
+                    System.out.println(
+                            "|                    3.Birthdays               4.Engagements                                                      |  ");
+                    System.out.println(
+                            "|                    5.Conference              6.Various Activities                                               |  ");
+                    System.out.println(
+                            "|_________________________________________________________________________________________________________________|");
+                    
+                    while (q==1){
+                        System.out.println("1.Room Booking\n2.Weddings\n3.Anniversaries\n4.Birthdays\n5.Engagements\n6.Conference");
+                        System.out.println("Enter your choice:");
+                        int choice2 =sc.nextInt();
+
+                        switch(choice2){
+                            case 1:
+                            c.RoomBook();
+
+                            case 2:
+                            c.Weddings();
+
+                            case 3:
+                            c.Anniversaries();
+
+                            case 4:
+                            c.Birthdays();
+
+                            case 5:
+                            c.Engagements();
+
+                            case 6:
+                            c.conference();
+                        }
+                    }
+                    
             }
+            System.out.println("Do you want to continue?\n1.Yes\n2.No");
+            n = sc.nextInt();
         }
 
     }
